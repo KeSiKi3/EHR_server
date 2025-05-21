@@ -15,6 +15,10 @@ class EmergencyData(BaseModel):
     gps_location: str
     symptoms: str
 
+@app.get("/")
+def root():
+    return {"message": "Server is running!"}
+
 # Register or update device status
 @app.get("/ping/{device_id}")
 def ping(device_id: str):
